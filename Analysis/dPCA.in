@@ -1,0 +1,42 @@
+################################################################
+# Importa los .pdb con las topologías y los nombra como L y R. #
+################################################################
+
+parm LTop.pdb 
+
+###########################################################
+# Importa los .pdb con las trayectorias de la simulacion. #
+###########################################################
+
+trajin Ltraj.traj
+trajin Rtraj.traj
+
+##################################################################
+## Hace un primer ajuste de alineamiento entre estructuras basado #
+## en el backbone del RNA                                         #
+###################################################################
+
+rms first mass out rms_R.dat @P
+
+############################################################################
+## Para calcular la matriz de covariancia, calcula la distancias entre las #
+## coordenadas para los atomos de la mascara respecto a si mismos en la    #
+## estructura promedio.                                                    #
+## Luego, calcula la matriz de covariancia.                                #
+############################################################################
+
+multidihedral di zeta
+run
+matrix dihcovar name L-R-dihcovar dihedrals di[*] out dicovar_SL4.dat
+
+##################################################################################
+## Diagonaliza la matriz con una cierta cantidad de clusters, y se queda con los #
+## autovectores y autovalores.                                                   #
+## Luego crea un archivo que permite visualizar el analisis usando VMD.          #
+##################################################################################
+
+diagmatrix L-R-dihcovar out vec_aver_SL4.lr vecs 10
+
+go
+
+projection modes vec_aver_SL4.lr out projection_dh_hiper_large.out beg 1 end 10  dihedrals di[*]

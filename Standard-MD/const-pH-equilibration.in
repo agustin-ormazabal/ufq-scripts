@@ -1,0 +1,12 @@
+Explicit solvent constant pH molecular dynamics
+ &cntrl
+   imin=0, irest=1, ntx=5,
+   ntpr=25000, ntwx=25000, nstlim=25000000,
+   dt=0.002, ntt=3, tempi=300,
+   temp0=300, tautp=2.0, ig=-1,
+   ntp=1, ntc=2, ntf=2, cut=9,
+   ntb=2,
+   nrespa=1, tol=0.000001, icnstph=2,
+   solvph=6.0, ntcnstph=5000,
+   gamma_ln=5.0, ntwr=25000, ioutfm=1,
+  /

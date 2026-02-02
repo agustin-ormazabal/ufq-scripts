@@ -1,0 +1,22 @@
+35 heating
+ &cntrl
+  imin=0,irest=0,ntx=1,ntb=1,cut=9.0,ntp=0,ntr=1,iwrap=0,
+  ntt=3,nstlim=6000,ntpr=100,ntwx=15000,ioutfm=1,dt=0.00001,
+  ntwr=6000,gamma_ln=1.0,tol=0.0000001,ig=-1,nmropt=1,
+ &end
+ &wt
+ type="TEMP0", istep1=0, istep2=6000, value1=0.0, value2=50.0,
+ &end
+ &wt
+ type="END",
+ &end
+keep lipids fixed with weak restraints
+3.0
+FIND
+P * * *
+O * * *
+C * * *
+SEARCH
+RES 510 1604 
+END
+END
