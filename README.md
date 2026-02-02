@@ -13,6 +13,8 @@ Scripts devoted to the analysis of molecular dynamics (MD) simulations.
   CPPTRAJ input file for performing dihedral PCA (dPCA).
 - `molecular_fingerprints.py`  
   Uses MDAnalysis to generate molecular fingerprints from a given trajectory.
+- `dRMSD.sh`  
+  Performs an analysis similar to RMSD, but based on dihedral angles.
 
 ## Figures
 Scripts devoted to generating figures from MD analyses.
