@@ -44,5 +44,5 @@ Scripts devoted to running Umbrella Sampling simulations.
 - `WHAM-DHAM-BAR.f`  
   Script to reconstruct free energy profiles from Umbrella Sampling simulations.
 
-## Preview
+## The team
 ![Preview](team.png)
